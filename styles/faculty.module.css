@@ -1,0 +1,87 @@
+.wideImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 62vh;
+    width: 100%;
+    text-align: center;
+    background: url("/widecard.jpg") center center;
+    background-size: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.wideImage>h1 {
+    font-size: 5em;
+}
+
+.wideImage>p {
+    font-size: 20px;
+    margin-top: -3%;
+}
+
+.messageSection {
+    position: absolute;
+    top: 64%;
+}
+
+.heading {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.heading>h1 {
+    color: #1B2F6E;
+    font-size: 3.3em;
+}
+
+.heading>div {
+    background: #c2c7d8;
+    height: 0.8px;
+    width: 43%;
+    margin-left: -11%;
+    margin-right: 3%;
+}
+
+.message {
+    position: absolute;
+    top: 79%;
+    width: 80%;
+    font-size: 22px;
+    margin-left: 10%;
+}
+
+.message>p>img {
+    height: 33px;
+    margin: 0 2%;
+}
+
+.img2 {
+    position: absolute;
+}
+
+.message>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.message>div>p {
+    color: #4f4f4f;
+    margin-top: -2%;
+}
+
+.facultySection {
+    position: absolute;
+    top: 157%;
+}
+
+/* ********************************   CARDS   ******************************************8 */
+
