@@ -47,4 +47,4 @@ export const facultyData = [
         role: "Full Stack Developer",
         areas: ["HTML", "CSS", "Javascript"]
     }
-]
+] 
