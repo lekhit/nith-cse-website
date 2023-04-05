@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import * as FaIcons from "react-icons/fa";
-import { AiOutlineRight } from "react-icons/ai"
+import { AiOutlineRight } from "react-icons/ai";
 
 function UserCard({ user }) {
     const [detailActive, setDetailActive] = useState(false);
@@ -18,7 +19,7 @@ function UserCard({ user }) {
                 <p>Skills</p>
                 <div className="skills">
                     {user.areas.map((area) => {
-                        return <div k>{area}</div>
+                        return <div key={area}>{area}</div>
                     })}
                 </div>
                 <div className="icons">
@@ -31,7 +32,7 @@ function UserCard({ user }) {
                     <a href="#" target="_blank" className="fab"><FaIcons.FaInstagram />
                     </a>
                 </div>
-                <div className='findMore'><a href="#" target="_blank">Find More <AiOutlineRight /></a></div>
+                <div className='findMore'><Link href={`/faculty/${user.id}`}>Find More <AiOutlineRight /></Link></div>
                 <div className="cancel center" onClick={() => setDetailActive(false)} id='cross'> <FaIcons.FaTimes className="fas" />
                 </div>
             </div>

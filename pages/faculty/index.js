@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import styles from '../styles/faculty.module.css'
+import Navbar from '../../components/Navbar'
+import styles from '../../styles/faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
 import UserCard from '@/components/usercard'
-import { facultyData } from "../assets/facultyData"
+import { facultyData } from "../../assets/facultyData"
 
 function faculty() {
     const scrollStyle = {
