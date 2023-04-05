@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
 .wideImage {
     position: absolute;
     top: 0;
@@ -83,5 +85,18 @@
     top: 157%;
 }
 
-/* ********************************   CARDS   ******************************************8 */
+.cards{
+    font-family: 'PT Sans', sans-serif;
+    display: flex;
+    max-width: 80vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 80vw;
+    margin-right: 11.2%;
+}
 
+.footerSection{
+    position: relative;
+}

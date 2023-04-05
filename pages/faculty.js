@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import styles from '../styles/faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
+import UserCard from '@/components/usercard'
+import { facultyData } from "../assets/facultyData"
 
 function faculty() {
     const scrollStyle = {
@@ -18,7 +20,7 @@ function faculty() {
                 <link rel="icon" href="/logo.png" />
             </Head>
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
-            <div className="faculty">
+            <div className={styles.faculty}>
                 <Navbar />
                 <div className={styles.wideImage}>
                     <h1>Faculty & Research</h1>
@@ -46,6 +48,11 @@ function faculty() {
                     <div className={styles.heading}>
                         <h1>Our Renowned Faculty</h1>
                         <div></div>
+                    </div>
+                    <div className={styles.cards}>
+                        {facultyData.map(user => {
+                            return <UserCard key={user.id} user={user} />
+                        })}
                     </div>
                 </section>
             </div>
