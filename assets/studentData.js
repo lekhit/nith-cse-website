@@ -1,4 +1,4 @@
-export const facultyData = [
+export const studentData = [
     {
         id:1,
         name: "Akshay",
