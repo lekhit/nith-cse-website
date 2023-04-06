@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Navbar from '../../components/Navbar'
 import { useRouter } from 'next/router';
 import { Image } from 'antd';
-import styles from '../../styles/faculty.module.css'
+import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
 
 // use (router.query.id) to access id from the url
@@ -26,12 +26,12 @@ function idPage() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
 
             <section className='facultyDetails'>
-                <div className={styles.facultyHeader}>
+                <div className={styles.facultyHeader} style={{ background: "url(/facultybg.jpg) center center", backgroundSize: "100%" }}>
                     <div className={styles.overlay}></div>
                     <Navbar />
                     <div className={styles.facultyImage}><Image width={400} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" /></div>
                     <div className={styles.headerText}>
-                        <h1>Akshay garg</h1>
+                        <h1>Shyam Sunder</h1>
                         <p>Full Stack Developer</p>
                     </div>
                 </div>

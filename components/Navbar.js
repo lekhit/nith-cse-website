@@ -13,7 +13,7 @@ const Navbar = () => {
         <Link className={`${styles.navLinks} ${location.pathname === '/' ? styles.active : ''}`} href="/">Home</Link>
         <Link className={`${styles.navLinks} ${location.pathname === '/about' ? styles.active : ''}`} href="/about">About</Link>
         <Link className={`${styles.navLinks} ${location.pathname === '/faculty' ? styles.active : ''}`} href="/faculty">Faculty & Research</Link>
-        <Link className={`${styles.navLinks} ${location.pathname === '/student' ? styles.active : ''}`} href="/student">Student</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/student' ? styles.active : ''}`} href="/student">Students</Link>
       </div>
       <div className={`${styles.navToggle} ${isOpen && styles.open}`}
         onClick={() => setIsOpen(!isOpen)}>

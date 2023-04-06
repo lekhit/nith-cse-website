@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Navbar from '../../components/Navbar'
 import { useRouter } from 'next/router';
 import { Image } from 'antd';
-import styles from '../../styles/faculty.module.css'
+import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
 
 // use (router.query.id) to access id from the url
@@ -26,25 +26,24 @@ function idPage() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
 
             <section className='facultyDetails'>
-                <div className={styles.facultyHeader}>
+                <div className={styles.facultyHeader} style={{ background: "url(/facultybg.jpg) center center", backgroundSize: "100%" }}>
                     <div className={styles.overlay}></div>
                     <Navbar />
                     <div className={styles.facultyImage}><Image width={400} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" /></div>
                     <div className={styles.headerText}>
-                        <h1>Akshay garg</h1>
+                        <h1>Shyam Sunder</h1>
                         <p>Full Stack Developer</p>
                     </div>
                 </div>
                 <div className={styles.allDetails}>
+
                     <div className={styles.detail}>
                         <div className={styles.heading}>
-                            <h1>Area</h1>
+                            <h1>About</h1>
                             <div></div>
                         </div>
                         <div className={styles.data}>
-                            <div><p>Primary Area:</p><span>Human Resource Management</span></div>
-                            <div><p>Secondary Area:</p><span>Strategy</span></div>
-                            <div><p>Primary Area:</p><span>Resource</span></div>
+                            <p>Ph.D, Marketing Strategy & International Business, The University of Texas at Austin , 1992 -1996 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ipsa earum aspernatur numquam ex alias hic magni exercitationem, unde sit enim facere distinctio eius aperiam molestiae autem eos a ab qui voluptatem!</p>
                         </div>
                     </div>
 
@@ -57,7 +56,7 @@ function idPage() {
                             <div><p>Email:</p><span>arnab@nith.ac.in</span></div>
                             <div><p>Phone:</p><span>+91-79-7152 4947</span></div>
                             <div><p>Secretary:</p><span>Shylaja Deepak</span></div>
-                            <div><p>Website:</p><a href='#' style={{color:"#9e4646"}}>Personal Website</a></div>
+                            <div><p>Website:</p><a href='#' style={{ color: "#9e4646" }}>Personal Website</a></div>
                         </div>
                     </div>
 
@@ -75,25 +74,24 @@ function idPage() {
 
                     <div className={styles.detail}>
                         <div className={styles.heading}>
-                            <h1>Research Area</h1>
-                            <div style={{width:"71%"}}></div>
+                            <h1>Address</h1>
+                            <div></div>
                         </div>
                         <div className={styles.data}>
-                            <p>Sahay, Arvind (2016), "How to Understand, Build and Sustain Brand Relationships," Targeted at the Sloan Management Review.</p>
-                            <p>Saini, Gordhan K., Arvind Sahay and Gurumurthy Kalyanraman (2016), "An Empirical Study of the Latitude of Quantity Acceptance," Under 2nd review at Journal of Product and Brand Management.</p>
-                            <p>Mukherjee, S. & Sahay, Arvind (2016). Customer reactions to prices in the face of negative information about products. Under 2nd review at Journal of Consumer Marketing</p>
-                            <p>Sahay, Arvind, Ankur Kapoor, Nandini Chatterjee Singh, Chandrasekhar Pammi and Prantosh Bannerjee (2017), "Preference reversals at POS: Impact of interaction between consumers' processing resource availability & promotion framing for Strong and Weak brand</p>
+                            <p>Vill- Gulabpura, PO- Panjehra, Teh- Nalagarh, Distt- Solan (HP) - 174101 </p>
                         </div>
                     </div>
 
                     <div className={styles.detail}>
                         <div className={styles.heading}>
-                            <h1>Academic Experience</h1>
-                            <div style={{width:"57%"}}></div>
+                            <h1>Skills</h1>
+                            <div></div>
                         </div>
-                        <div className={styles.data}>
-                            <p>Professor, Indian Institute of Management, Ahmedabad, 2004 – present</p>
-                            <p>Assistant Professor, London Business School, University of London, 1996 - 2004</p>
+                        <div className={`${styles.data} ${styles.skills}`}>
+                            <div><p>HTML</p></div>
+                            <div><p>CSS</p></div>
+                            <div><p>Javascript</p></div>
+                            <div><p>ReactJS</p></div>
                         </div>
                     </div>
                 </div>

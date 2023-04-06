@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Navbar from '../../components/Navbar'
-import styles from '../../styles/faculty.module.css'
+import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
 import UserCard from '@/components/usercard'
 import { facultyData } from "../../assets/facultyData"
@@ -22,7 +22,7 @@ function faculty() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage}>
+                <div className={styles.wideImage} style={{ background: "url(/widecardfaculty.jpg) center center", backgroundSize: "100%" }}>
                     <h1>Faculty & Research</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
                 </div>

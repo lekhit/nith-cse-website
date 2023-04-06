@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ScrollToTop from "react-scroll-to-top";
+import CustomCursor from '@/components/CustomCursor';
+import CustomCursorManager from '@/components/CustomCursor/context/manager';
 
 export default function Home() {
   const scrollStyle = {
@@ -18,9 +20,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
-      <Header />
-      <Footer />
+      <CustomCursorManager>
+        <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
+        <CustomCursor />
+        <Header />
+        <Footer />
+      </CustomCursorManager>
     </>
   )
 }
