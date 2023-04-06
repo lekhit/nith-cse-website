@@ -10,10 +10,10 @@ const Navbar = () => {
     <div className={styles.Navbar}>
       <img src="/logo.png" alt="logo" className={styles.logo}/>
       <div className={`${styles.navItems} ${isOpen && styles.open}`}>
-        <Link className={`${styles.navLinks} ${location.pathname === '/' ? styles.active : ''}`} href="/">Home</Link>
-        <Link className={`${styles.navLinks} ${location.pathname === '/about' ? styles.active : ''}`} href="/about">About</Link>
-        <Link className={`${styles.navLinks} ${location.pathname === '/faculty' ? styles.active : ''}`} href="/faculty">Faculty & Research</Link>
-        <Link className={`${styles.navLinks} ${location.pathname === '/student' ? styles.active : ''}`} href="/student">Students</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/' ? styles.active : ''}`} href="/" id="home">Home</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/about' ? styles.active : ''}`} href="/about" id="about">About</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/faculty' ? styles.active : ''}`} href="/faculty" id="faculty">Faculty & Research</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/student' ? styles.active : ''}`} href="/student" id="student">Students</Link>
       </div>
       <div className={`${styles.navToggle} ${isOpen && styles.open}`}
         onClick={() => setIsOpen(!isOpen)}>

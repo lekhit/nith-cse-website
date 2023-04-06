@@ -1,6 +1,7 @@
-body{
+body {
   width: 100vw;
   overflow-x: hidden;
+  cursor: none;
 }
 
 /* ***********************************CARDS************************************** */
@@ -134,17 +135,17 @@ body{
   transition: all 0.45s;
 }
 
-.findMore > a {
+.findMore>a {
   text-decoration: none;
   color: #cfcfcf;
 }
 
-.findMore > a > svg{
+.findMore>a>svg {
   position: relative;
   top: 13%;
   right: 0;
 }
 
-.findMore:hover{
+.findMore:hover {
   transform: translateX(1em);
 }
