@@ -3,7 +3,7 @@ export const studentData = [
         id:1,
         name: "Akshay",
         rollno: "20BCS059",
-        skills: ["HTML", "Javascript", "ReactJS", "NextJS"],
+        skills: ["HTML", "ReactJS", "NextJS"],
         email: "arnab@nith.ac.in",
         phone: "+91-79-7152 4947",
         website: "www.google.com",
@@ -58,5 +58,11 @@ export const studentData = [
         name: "Anmol",
         rollno: "20bcs054",
         skills: ["HTML", "CSS", "Javascript"]
+    },
+    {
+        id:9,
+        name: "Arjun Talwar",
+        rollno: "20bcs085",
+        skills: ["Cricketer", "Long Jump", "Body Building"]
     }
 ]

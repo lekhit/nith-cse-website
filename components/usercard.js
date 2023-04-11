@@ -29,10 +29,6 @@ function UserCard({ user }) {
                         </a>
                         <a href="#" target="_blank" className="fab"><FaIcons.FaLinkedin />
                         </a>
-                        <a href="#" target="_blank" className="fab"><FaIcons.FaYoutube />
-                        </a>
-                        <a href="#" target="_blank" className="fab"><FaIcons.FaInstagram />
-                        </a>
                     </div>
                     <div className='findMore'><Link href={`student/${user.id}`}>Find More <AiOutlineRight /></Link></div>
                 </div>

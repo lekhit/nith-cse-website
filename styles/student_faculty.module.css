@@ -198,17 +198,31 @@
     width: 27%;
 }
 
-.data > p{
+.data>p {
     font-size: 20px;
     width: 72%;
     margin-top: -0.5%;
     margin-bottom: 1.5%;
 }
 
-.skills{
+.skills {
     flex-direction: row;
 }
 
-.skills > div{
+.skills>div {
     padding-right: 3%;
+}
+
+.icons{
+    width: 6%;
+}
+
+.icons>a {
+    font-size: 2.2em;
+    color: #fff;
+    margin-left: 8%;
+}
+
+.icons>a:hover{
+    color: #ffffff7a;
 }

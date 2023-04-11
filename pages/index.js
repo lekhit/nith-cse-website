@@ -22,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
       <CustomCursor
-                targets={['#home', '#about', '#faculty', '#student',]}
+                targets={['#home', '#about', '#faculty', '#student', '#moreDetails']}
                 customClass='custom-cursor'
                 dimensions={100}
                 fill='#FFF'

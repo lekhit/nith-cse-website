@@ -6,6 +6,7 @@ import ScrollToTop from "react-scroll-to-top";
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import { useState, useEffect } from 'react';
+import * as FaIcons from "react-icons/fa";
 
 function idPage() {
     const [data, setData] = useState([{
@@ -19,7 +20,9 @@ function idPage() {
         cgpa: "9.0",
         email: "arnab@nith.ac.in",
         phone: "+91-79-7152 4947",
-        website: "www.google.com",
+        github: "https://github.com/akshaygarg034",
+        linkedin: "https://www.linkedin.com/in/akshay-garg-360281213/",
+        website: "https://google.com",
         img: "https://static.vecteezy.com/system/resources/previews/000/420/940/original/avatar-icon-vector-illustration.jpg",
         address: "Vill- Gulabpura, PO- Panjehra, Teh- Nalagarh, Distt- Solan (HP) - 174101",
         education_10: "Aryan Public Sr. Sec. School Jhiriwala",
@@ -41,7 +44,7 @@ function idPage() {
                 <link rel="icon" href="/logo.png" />
             </Head>
             <CustomCursor
-                targets={['#home', '#about', '#faculty', '#student']}
+                targets={['#home', '#about', '#faculty', '#student', '#moreDetails']}
                 customClass='custom-cursor'
                 dimensions={100}
                 fill='skyblue'
@@ -60,12 +63,18 @@ function idPage() {
 
             <section className='facultyDetails'>
                 <div className={styles.studentHeader} style={{ background: "url(https://r2.community.samsung.com/t5/image/serverpage/image-id/3493931iF4B621CAADA835A9?v=v2) center center", backgroundSize: "86%", backgroundPositionY: '17%' }}>
-                    <div className={styles.overlay} style={{backgroundColor: 'rgba(0, 0, 0, 0.25)'}}></div>
+                    <div className={styles.overlay} style={{ backgroundColor: 'rgba(0, 0, 0, 0.25)' }}></div>
                     <Navbar />
                     <div className={styles.studentImage}><Image width={400} src={data[0].img} /></div>
                     <div className={styles.headerText}>
                         <h1>{data[0].name}</h1>
                         <p>{data[0].rollno}</p>
+                        <div className={styles.icons}>
+                            <a href={data[0].github} target="_blank" className="fab"><FaIcons.FaGithub />
+                            </a>
+                            <a href={data[0].linkedin} target="_blank" className="fab"><FaIcons.FaLinkedin />
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.allDetails}>
