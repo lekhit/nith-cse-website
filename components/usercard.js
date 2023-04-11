@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 
 function UserCard({ user }) {
     const [detailActive, setDetailActive] = useState(false);
-    const location = useRouter();
     return (
         <div className="box center">
             <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
@@ -18,23 +17,25 @@ function UserCard({ user }) {
                 <FaIcons.FaArrowRight className="fas" />
             </div>
             <div className={detailActive ? "left_container active" : "left_container off"}>
-                <p>Skills</p>
-                <div className="skills">
-                    {user.areas.map((area) => {
-                        return <div key={area}>{area}</div>
-                    })}
+                <div className="left_container_data">
+                    <p>Skills</p>
+                    <div className="skills">
+                        {user.skills.map((skill) => {
+                            return <div key={skill}>{skill}</div>
+                        })}
+                    </div>
+                    <div className="icons">
+                        <a href="#" target="_blank" className="fab"><FaIcons.FaGithub />
+                        </a>
+                        <a href="#" target="_blank" className="fab"><FaIcons.FaLinkedin />
+                        </a>
+                        <a href="#" target="_blank" className="fab"><FaIcons.FaYoutube />
+                        </a>
+                        <a href="#" target="_blank" className="fab"><FaIcons.FaInstagram />
+                        </a>
+                    </div>
+                    <div className='findMore'><Link href={`student/${user.id}`}>Find More <AiOutlineRight /></Link></div>
                 </div>
-                <div className="icons">
-                    <a href="#" target="_blank" className="fab"><FaIcons.FaGithub />
-                    </a>
-                    <a href="#" target="_blank" className="fab"><FaIcons.FaLinkedin />
-                    </a>
-                    <a href="#" target="_blank" className="fab"><FaIcons.FaYoutube />
-                    </a>
-                    <a href="#" target="_blank" className="fab"><FaIcons.FaInstagram />
-                    </a>
-                </div>
-                <div className='findMore'><Link href={`${location.pathname === '/student' ? 'student' : 'faculty'}/${user.id}`}>Find More <AiOutlineRight /></Link></div>
                 <div className="cancel center" onClick={() => setDetailActive(false)} id='cross'> <FaIcons.FaTimes className="fas" />
                 </div>
             </div>

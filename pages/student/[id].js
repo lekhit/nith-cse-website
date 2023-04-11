@@ -1,20 +1,37 @@
 import Head from 'next/head'
 import Navbar from '../../components/Navbar'
-import { useRouter } from 'next/router';
 import { Image } from 'antd';
 import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
-
-// use (router.query.id) to access id from the url
+import CustomCursor from 'custom-cursor-react';
+import 'custom-cursor-react/dist/index.css';
+import { useState, useEffect } from 'react';
 
 function idPage() {
+    const [data, setData] = useState([{
+        id: 1,
+        name: "Akshay garg",
+        rollno: "20BCS059",
+        skill1: "ReactJS",
+        skill2: "NextJS",
+        skill3: "ExpressJS",
+        semester: "6",
+        cgpa: "9.0",
+        email: "arnab@nith.ac.in",
+        phone: "+91-79-7152 4947",
+        website: "www.google.com",
+        img: "https://static.vecteezy.com/system/resources/previews/000/420/940/original/avatar-icon-vector-illustration.jpg",
+        address: "Vill- Gulabpura, PO- Panjehra, Teh- Nalagarh, Distt- Solan (HP) - 174101",
+        education_10: "Aryan Public Sr. Sec. School Jhiriwala",
+        education_12: "Aryan Public Sr. Sec. School Jhiriwala",
+        about: "Ph.D, Marketing Strategy & International Business, The University of Texas at Austin , 1992 -1996 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ipsa earum aspernatur numquam ex alias hic magni exercitationem, unde sit enim facere distinctio eius aperiam molestiae autem eos a ab qui voluptatem!"
+    }]);
     const scrollStyle = {
         height: '65px',
         width: '65px',
         borderRadius: '50%',
     }
 
-    // const router = useRouter();
     return (
         <>
             <Head>
@@ -23,16 +40,32 @@ function idPage() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/logo.png" />
             </Head>
+            <CustomCursor
+                targets={['#home', '#about', '#faculty', '#student']}
+                customClass='custom-cursor'
+                dimensions={100}
+                fill='skyblue'
+                smoothness={{
+                    movement: 0.3,
+                    scale: 0.1,
+                    opacity: 0.2,
+                }}
+                opacity={0.5}
+                targetOpacity={0.5}
+                targetScale={3}
+                strokeColor={'#000'}
+                strokeWidth={0}
+            />
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
 
             <section className='facultyDetails'>
-                <div className={styles.facultyHeader} style={{ background: "url(/facultybg.jpg) center center", backgroundSize: "100%" }}>
-                    <div className={styles.overlay}></div>
+                <div className={styles.studentHeader} style={{ background: "url(https://r2.community.samsung.com/t5/image/serverpage/image-id/3493931iF4B621CAADA835A9?v=v2) center center", backgroundSize: "86%", backgroundPositionY: '17%' }}>
+                    <div className={styles.overlay} style={{backgroundColor: 'rgba(0, 0, 0, 0.25)'}}></div>
                     <Navbar />
-                    <div className={styles.facultyImage}><Image width={400} src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" /></div>
+                    <div className={styles.studentImage}><Image width={400} src={data[0].img} /></div>
                     <div className={styles.headerText}>
-                        <h1>Shyam Sunder</h1>
-                        <p>Full Stack Developer</p>
+                        <h1>{data[0].name}</h1>
+                        <p>{data[0].rollno}</p>
                     </div>
                 </div>
                 <div className={styles.allDetails}>
@@ -43,7 +76,18 @@ function idPage() {
                             <div></div>
                         </div>
                         <div className={styles.data}>
-                            <p>Ph.D, Marketing Strategy & International Business, The University of Texas at Austin , 1992 -1996 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ipsa earum aspernatur numquam ex alias hic magni exercitationem, unde sit enim facere distinctio eius aperiam molestiae autem eos a ab qui voluptatem!</p>
+                            <p>{data[0].about}</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.detail}>
+                        <div className={styles.heading}>
+                            <h1 style={{ marginLeft: '-1%' }}>Academic Details</h1>
+                            <div style={{ marginLeft: '-46%' }}></div>
+                        </div>
+                        <div className={styles.data}>
+                            <div><p>Semester:</p><span>{data[0].semester}</span></div>
+                            <div><p>CGPA:</p><span>{data[0].cgpa}</span></div>
                         </div>
                     </div>
 
@@ -53,10 +97,9 @@ function idPage() {
                             <div></div>
                         </div>
                         <div className={styles.data}>
-                            <div><p>Email:</p><span>arnab@nith.ac.in</span></div>
-                            <div><p>Phone:</p><span>+91-79-7152 4947</span></div>
-                            <div><p>Secretary:</p><span>Shylaja Deepak</span></div>
-                            <div><p>Website:</p><a href='#' style={{ color: "#9e4646" }}>Personal Website</a></div>
+                            <div><p>Email:</p><span>{data[0].email}</span></div>
+                            <div><p>Phone:</p><span>{data[0].phone}</span></div>
+                            <div><p>Website:</p><a href={data[0].website} style={{ color: "#9e4646" }}>Personal Website</a></div>
                         </div>
                     </div>
 
@@ -66,9 +109,8 @@ function idPage() {
                             <div></div>
                         </div>
                         <div className={styles.data}>
-                            <p>Ph.D, Marketing Strategy & International Business, The University of Texas at Austin , 1992 -1996</p>
-                            <p>PGDM, (MBA with concentration in Marketing & Finance), Indian Institute of Management, Ahmedabad, India, 1987-1989</p>
-                            <p>Bachelor of Technology , Chemical Engg, Indian Institute of Technology, Kanpur, India, 1982-1986</p>
+                            <div><p>10th:</p><span>{data[0].education_10}</span></div>
+                            <div><p>12th:</p><span>{data[0].education_12}</span></div>
                         </div>
                     </div>
 
@@ -78,7 +120,7 @@ function idPage() {
                             <div></div>
                         </div>
                         <div className={styles.data}>
-                            <p>Vill- Gulabpura, PO- Panjehra, Teh- Nalagarh, Distt- Solan (HP) - 174101 </p>
+                            <p>{data[0].address}</p>
                         </div>
                     </div>
 
@@ -88,10 +130,9 @@ function idPage() {
                             <div></div>
                         </div>
                         <div className={`${styles.data} ${styles.skills}`}>
-                            <div><p>HTML</p></div>
-                            <div><p>CSS</p></div>
-                            <div><p>Javascript</p></div>
-                            <div><p>ReactJS</p></div>
+                            <div><p>{data[0].skill1}</p></div>
+                            <div><p>{data[0].skill2}</p></div>
+                            <div><p>{data[0].skill3}</p></div>
                         </div>
                     </div>
                 </div>

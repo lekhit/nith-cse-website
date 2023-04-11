@@ -1,7 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');    /* Headings */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');             /* paragraphs */
+
 body {
   width: 100vw;
   overflow-x: hidden;
   cursor: none;
+}
+
+/* ***********************************Announcements************************************** */
+
+.announcement_section {
+  position: relative;
+  top: 103vh;
+  background: #f8f8f8;
+  height: 47vh;
+}
+
+.heading {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+.heading>h1 {
+  color: #1B2F6E;
+  font-size: 3.3em;
+}
+
+.heading>div {
+  background: #868ea7;
+  height: 0.8px;
+  width: 43%;
+  margin-left: -10%;
+  margin-right: 15%;
+}
+
+.announcementBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
+  margin-right: 6%;
+}
+
+.announcement {
+  border: 1px solid #868ea7b8;;
+  width: 30%;
+  margin: 0 3%;
+  padding: 1%;
+  font-size: 20px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px;
+}
+
+.announcement>span {
+  color: #878991;
+}
+
+.announcement>p>a {
+  text-decoration: none;
+  color: black;
+}
+
+.announcement>p>a:hover {
+  text-decoration: underline;
 }
 
 /* ***********************************CARDS************************************** */
@@ -28,6 +93,7 @@ body {
   overflow: hidden;
   margin-bottom: 3%;
   margin-top: 2%;
+  margin-right: 5%;
 }
 
 .box img {
@@ -68,7 +134,7 @@ body {
 
 #cross {
   bottom: 6%;
-  right: 6%;
+  right: 5%;
 }
 
 .arr_container>.fas {
@@ -88,6 +154,12 @@ body {
   flex-wrap: wrap;
   align-content: center;
   left: -2.5%;
+}
+
+.left_container_data {
+  position: absolute;
+  top: 9%;
+  left: 9%;
 }
 
 .off {
@@ -112,6 +184,25 @@ body {
   padding: 5px 10px;
   font-size: 0.9rem;
   margin: 4px 4px 4px 0;
+}
+
+.faculty_left_container_data {
+  /* faculty's Left Container*/
+  left: 13%;
+}
+
+.left_container .areas div {
+  margin: -2px -6px 5px 1px;
+}
+
+.faculty_left_container_data>p {
+  margin-top: 10px;
+  margin-bottom: 13%;
+}
+
+#f_cross {
+  bottom: 7%;
+  right: 2%;
 }
 
 .left_container .icons {
@@ -148,4 +239,4 @@ body {
 
 .findMore:hover {
   transform: translateX(1em);
-} 
+}

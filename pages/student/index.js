@@ -40,7 +40,8 @@ function student() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage} style={{ background: "url(/studentbg2.jpg) center center", backgroundSize: "100%" }}>
+                <div className={styles.wideImage} style={{ background: "url(/studentbg1.jpg) center center", backgroundSize: "100%" }}>
+                    <div className={styles.overlay}></div>
                     <h1>Students</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
                 </div>

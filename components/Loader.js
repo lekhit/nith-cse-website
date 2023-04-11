@@ -2,7 +2,7 @@ import React from 'react'
 
 function Loader() {
     const preloaderStyle = {
-        backgroundImage: `url(/preloader3.gif)`,
+        backgroundImage: `url(/preloader.gif)`,
         height: '100vh',
         backgroundRepeat:'no-repeat',
         backgroundPosition:'center',
