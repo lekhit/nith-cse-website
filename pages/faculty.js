@@ -31,7 +31,7 @@ function faculty() {
                     scale: 0.1,
                     opacity: 0.2,
                 }}
-                opacity={0.7}
+                opacity={0.5}
                 targetOpacity={0.5}
                 targetScale={3}
                 strokeColor={'#000'}

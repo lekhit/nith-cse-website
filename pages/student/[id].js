@@ -7,6 +7,7 @@ import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import { useState, useEffect } from 'react';
 import * as FaIcons from "react-icons/fa";
+import Jump from 'react-reveal/Jump';
 
 function idPage() {
     const [data, setData] = useState([{
@@ -62,19 +63,21 @@ function idPage() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
 
             <section className='facultyDetails'>
-                <div className={styles.studentHeader} style={{ background: "url(https://r2.community.samsung.com/t5/image/serverpage/image-id/3493931iF4B621CAADA835A9?v=v2) center center", backgroundSize: "86%", backgroundPositionY: '17%' }}>
-                    <div className={styles.overlay} style={{ backgroundColor: 'rgba(0, 0, 0, 0.25)' }}></div>
+                <div className={styles.studentHeader} style={{ background: "url(/studentbg2.JPG) center center", backgroundSize: "100%", backgroundPositionY: '15%' }}>
+                    <div className={styles.overlay} style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}></div>
                     <Navbar />
                     <div className={styles.studentImage}><Image width={400} src={data[0].img} /></div>
                     <div className={styles.headerText}>
                         <h1>{data[0].name}</h1>
                         <p>{data[0].rollno}</p>
-                        <div className={styles.icons}>
-                            <a href={data[0].github} target="_blank" className="fab"><FaIcons.FaGithub />
-                            </a>
-                            <a href={data[0].linkedin} target="_blank" className="fab"><FaIcons.FaLinkedin />
-                            </a>
-                        </div>
+                        <Jump>
+                            <div className={styles.icons}>
+                                <a href={data[0].github} target="_blank" className="fab"><FaIcons.FaGithub />
+                                </a>
+                                <a href={data[0].linkedin} target="_blank" className="fab"><FaIcons.FaLinkedin />
+                                </a>
+                            </div>
+                        </Jump>
                     </div>
                 </div>
                 <div className={styles.allDetails}>

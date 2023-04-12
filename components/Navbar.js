@@ -14,7 +14,7 @@ const Navbar = () => {
         <Link className={`${styles.navLinks} ${location.pathname === '/about' ? styles.active : ''}`} href="/about" id="about">About</Link>
         <Link className={`${styles.navLinks} ${location.pathname === '/faculty' ? styles.active : ''}`} href="/faculty" id="faculty">Faculty</Link>
         <Link className={`${styles.navLinks} ${location.pathname === '/student' ? styles.active : ''}`} href="/student" id="student">Students</Link>
-        <Link className={styles.navLinks} href="https://nith.ac.in/computer-science-engineering" id="moreDetails">More Details</Link>
+        <Link className={styles.navLinks} href="https://nith.ac.in/computer-science-engineering" id="moreDetails" target="_blank">More Details</Link>
       </div>
       <div className={`${styles.navToggle} ${isOpen && styles.open}`}
         onClick={() => setIsOpen(!isOpen)}>

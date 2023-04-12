@@ -6,6 +6,7 @@ import UserCard from '@/components/usercard'
 import { studentData } from "../../assets/studentData"
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
+import StudentGrid from '@/components/StudentGrid';
 
 function student() {
     const scrollStyle = {
@@ -40,30 +41,15 @@ function student() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage} style={{ background: "url(/studentbg1.jpg) center center", backgroundSize: "100%" }}>
+                <div className={styles.wideImage} style={{ background: "url(/studentbg1.jpg) center center", backgroundSize: "100%" , height:'100vh'}}>
                     <div className={styles.overlay}></div>
                     <h1>Students</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
                 </div>
-                <section className={styles.messageSection}>
-                    <div className={styles.heading}>
-                        <h1>Message from the Dean</h1>
-                        <div></div>
-                    </div>
-                    <div className={styles.message}>
+               
+                <StudentGrid/>
 
-                        <p><img src="https://www.iima.ac.in/themes/iima/images/qoute-1.svg" alt="comma" />NITH's faculty come from diverse backgrounds and each individual is a sought-after specialist in his or her own area of expertise. Their personal experience as entrepreneurs, policy makers, researchers, theoreticians and consultants enlivens their teaching and gives it immediacy and relevance. Both as educators and researchers, they are continually learning. They are well aware that knowledge alone changes nothing; the power to affect and shape the future lies with the observing, reasoning, creative, curious mind.</p>
-                        <p>IIMA faculty make a lasting impact on students because they challenge, inspire and truly care what happens to their students. Employing the very highest standards of teaching and mentoring, they mould students into innovators, entrepreneurs and leaders.</p>
-                        <p>They are directly involved in every aspect of the Institute: teaching, governance and research and also work continuously with their industry peers.</p>
-                        <p>Additionally, some experience in roles outside the academic world means that they have a realistic appreciation of the nitty-gritty of finance, markets, production, strategy and much more from the practice world. From their active involvement, comes the precious cross-fertilization of ideas and ensures that IIMA academic programmes are not just up to date but oriented to the future.<img className={styles.img2} src="https://www.iima.ac.in/themes/iima/images/qoute-2.svg" alt="comma" /></p>
-
-                        <div>
-                            <h4>Ram Naresh Sharma</h4>
-                            <p>Dean (Faculty)</p>
-                        </div>
-                    </div>
-                </section>
-                <section className={styles.facultySection}>
+                <section className={styles.facultySection} style={{top:'203vh'}}>
                     <div className={styles.heading}>
                         <h1>Our Students</h1>
                         <div></div>

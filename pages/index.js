@@ -5,6 +5,7 @@ import ScrollToTop from "react-scroll-to-top";
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import Announcements from '@/components/Announcements';
+import MainGrid from '@/components/MainGrid';
 
 export default function Home() {
   const scrollStyle = {
@@ -39,6 +40,7 @@ export default function Home() {
       />
       <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
       <Header />
+      <MainGrid/>
       <Announcements/>
       <Footer />
     </>

@@ -11,7 +11,7 @@ function Header() {
         <Navbar/>
         <div className={styles.content}>
             <h1>This is NITH</h1>
-            <p>We continue to be recognized as a leading global management institution, expanding the frontiers of management research, leadership, and education.</p>
+            <p>A leading centre of computer science research and education in India.</p>
         </div>
       </div>
     </>
