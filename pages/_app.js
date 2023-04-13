@@ -1,5 +1,5 @@
-import Loader from '@/components/Loader';
-import '@/styles/globals.css'
+import Loader from '../components/Loader';
+import '../styles/globals.css'
 import { useState, useEffect } from 'react';
 
 export default function App({ Component, pageProps }) {

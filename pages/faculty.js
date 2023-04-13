@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import styles from '../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
-import FacultyCard from '@/components/facultycard'
+import FacultyCard from '../components/facultycard'
 import { facultyData } from "../assets/facultyData"
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';

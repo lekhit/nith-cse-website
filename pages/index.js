@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import ScrollToTop from "react-scroll-to-top";
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
-import Announcements from '@/components/Announcements';
-import MainGrid from '@/components/MainGrid';
+import Announcements from '../components/Announcements';
+import MainGrid from '../components/MainGrid';
 
 export default function Home() {
   const scrollStyle = {
