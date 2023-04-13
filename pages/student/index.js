@@ -45,7 +45,6 @@ function student() {
                     <div className={styles.overlay}></div>
                     <h1>Students</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
-                    <button>Sign in</button>
                 </div>
                
                 <StudentGrid/>

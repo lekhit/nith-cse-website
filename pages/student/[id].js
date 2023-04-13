@@ -8,6 +8,8 @@ import 'custom-cursor-react/dist/index.css';
 import { useState, useEffect } from 'react';
 import * as FaIcons from "react-icons/fa";
 import Jump from 'react-reveal/Jump';
+import { EditOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 
 function idPage() {
     const [data, setData] = useState([{
@@ -78,6 +80,7 @@ function idPage() {
                                 </a>
                             </div>
                         </Jump>
+                        <Button type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> Edit</Button>
                     </div>
                 </div>
                 <div className={styles.allDetails}>
