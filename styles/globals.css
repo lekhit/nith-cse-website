@@ -486,7 +486,13 @@ body {
     display: none;
   }
 }
-
+.view{
+  position: absolute;
+  bottom: -37%;
+  background: white;
+  padding: 1% 1%;
+  border-radius: 7%;
+}
 @media screen and (max-width: 600px) {
   .screen-body {
     padding: 40px;

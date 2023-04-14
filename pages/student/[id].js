@@ -44,9 +44,15 @@ function idPage() {
     const { data: session, status, update } = useSession()
     const router=useRouter();
     const EditFunction =()=>{
-        return <Button href="/form" type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> Edit</Button>
-                   
-           
+        let s="Edit";
+if(status==='unauthenticated'){
+    s='Sign in'
+}
+if(status==='authenticated'){
+    const {id}=router.query
+    if(session.user.email.toLowerCase() === id.toLowerCase())
+        return <Button href="/form" type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> {s}</Button>      
+}      
     }
     return (
         <>

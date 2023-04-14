@@ -1,16 +1,28 @@
 import React from 'react'
 import Navbar from './Navbar'
 import styles from '../styles/header.module.css'
+import { useSession } from 'next-auth/react'
 
 function Header() {
+  const {data:session,status}=useSession()
+  const Login_=()=>{
+    if(status==='authenticated'){
+    return <h2 >{session.user.name} </h2>
+    }
+  }
+
   return (
     <>
+
       <div className={styles.header}>
         <div className={styles.overlay}></div>
+        
         <video src="/bg1.mp4" autoPlay loop muted className={styles.bgVideo}/>
         <Navbar/>
         <div className={styles.content}>
-            <h1>This is NITH</h1>
+            
+        <Login_></Login_>
+        <h1>This is NITH </h1>
             <p>A leading centre of computer science research and education in India.</p>
         </div>
       </div>

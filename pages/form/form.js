@@ -57,7 +57,7 @@ const InnerForm = (props) => {
             <div className="screen-body-item">
               <div className="app-form">
                 <div className="app-form-group">
-                  <input
+                  <Field
                     className="app-form-control"
                     placeholder="NAME"
                     name="name" id="name"
@@ -75,6 +75,7 @@ const InnerForm = (props) => {
                 </div>
                 <div className="app-form-group">
                   <input
+                  disabled
                   name="email" id="email"
                   type="email"
                     className="app-form-control"
@@ -83,95 +84,84 @@ const InnerForm = (props) => {
                   />
                 </div>
                 <div className="app-form-group">
-                  <input
-                  name="phone" id="phone"
-                  type="number"
-                    className="app-form-control"
-                    placeholder="phone no"
-                      
-                    value={user.phone}
-                    onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group">
-                  <input
-                    className="app-form-control"
-                    placeholder="smester"
-                    name="smester" id="smester"
-                      type="number"
-                    value={user.smester}
-                    onChange={handleInput}
+                        <input
+                          name="phone" id="phone"
+                          type="number"
+                          className="app-form-control"
+                          placeholder="phone no"
 
-                  />
-                </div>
-             
-                <div className="app-form-group">
-                  <input
-                  name="cgpa" id="cgpa"
-                  type="number"
-                    className="app-form-control"
-                    placeholder="cgpa"
-                      
-                    value={user.cgpa}
-                    onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="skill_1" 
-                     type="text"
-                     name="skill_1" id="skill_1"
-                     value={user.skill_1}
-                     onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="skill_2" 
-                    type="text"
-                    name="skill_2" id="skill_2"
-                    value={user.skill_2}
-                    onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="skill_3" 
-                    type="text"
-                    name="skill_3" id="skill_3"
-                    value={user.skill_3}
-                    onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="website" 
-                    type="text"
-                    name="website" id="website"
-                    value={user.website}
-                    onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="education_10th" 
-                    type="text"
-                    name="education_10th" id="education_10th"
-                    value={user.education_10th}
-                    onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="education_12th" 
-                    type="text"
-                    name="education_12th" id="education_12th"
-                    value={user.education_12th}
-                    onChange={handleInput}
-                  />
-                </div>
-                <div className="app-form-group message">
-                  <input className="app-form-control" placeholder="about" 
-                    type="text"
-                    name="about" id="about"
-                    value={user.about}
-                    onChange={handleInput}
-                  />
-                </div>
+                          {...getFieldProps('phone')}
+                        />
+                      </div>
+                      <div className="app-form-group">
+                        <input
+                          className="app-form-control"
+                          placeholder="smester"
+                          name="smester" id="smester"
+                          type="number"
+                          {...getFieldProps('smester')}
+
+                        />
+                      </div>
+
+                      <div className="app-form-group">
+                        <input
+                          name="cgpa" id="cgpa"
+                          type="number"
+                          className="app-form-control"
+                          placeholder="cgpa"
+                          {...getFieldProps('cgpa')}
+                        />
+                      </div>
+                      <div className="app-form-group message">
+                        <input className="app-form-control" placeholder="skill_1"
+                          type="text"
+                          name="skill_1" id="skill_1"
+                          {...getFieldProps('skill_1')}
+                        />
+                      </div>
+                      <div className="app-form-group message">
+                        <input className="app-form-control" placeholder="skill_2"
+                          type="text"
+                          name="skill_2" id="skill_2"
+                          {...getFieldProps('skill_2')}
+                        />
+                      </div>
+                      <div className="app-form-group message">
+                        <input className="app-form-control" placeholder="skill_3"
+                          type="text"
+                          name="skill_3" id="skill_3"
+                          {...getFieldProps('skill_3')}
+                        />
+                      </div>
+                      <div className="app-form-group message">
+                        <input className="app-form-control" placeholder="Personal Website"
+                          type="text"
+                          name="website" id="website"
+                          {...getFieldProps('website')}
+                        />
+                      </div>
+                      <div className="app-form-group message">
+                        <input className="app-form-control" placeholder="education_10th"
+                          type="text"
+                          name="education_10th" id="education_10th"
+                          {...getFieldProps('education_10th')}
+                        />
+                      </div>
+                      <div className="app-form-group message">
+                        <input className="app-form-control" placeholder="education_12th"
+                          type="text"
+                          name="education_12th" id="education_12th"
+                          {...getFieldProps('education_12th')}
+                        />
+                      </div>
+                      <div className="app-form-group message">
+                        <input className="app-form-control" placeholder="about"
+                          type="text"
+                          name="about" id="about"
+                          {...getFieldProps('about')}
+                        />
+                      </div>
                 <div className="app-form-group buttons">
                   
                   <button className="app-form-button" type="submit" onClick={postDate}  >SEND</button>
@@ -200,12 +190,7 @@ const MyForm = withFormik({
   // Add a custom validation function (this can be async too!)
   validate: (values) => {
     const errors= {};
-    if (!values.message) {
-      errors.message = 'Required';
-    }
-    if (!/^(\d+(\.\d+)?)$/i.test(values.amt)) {
-      errors.amt = 'Only Decimal Numbers Allowed';
-    }
+    
     return errors;
   },
 
@@ -213,7 +198,7 @@ const MyForm = withFormik({
     console.log(values)
     const options = {
       method: 'POST',
-      body: JSON.stringify({ ...values }),
+      body: JSON.stringify({ ...values,['key']:values.email }),
       headers: {
       },
     };
