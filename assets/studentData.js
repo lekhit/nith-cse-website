@@ -4,7 +4,7 @@ export const studentData = [
         name: "Akshay",
         rollno: "20BCS059",
         skills: ["HTML", "ReactJS", "NextJS"],
-        email: "arnab@nith.ac.in",
+        email:'20bcs059@nith.ac.in',
         phone: "+91-79-7152 4947",
         website: "www.google.com",
         address: "Vill- Gulabpura, PO- Panjehra, Teh- Nalagarh, Distt- Solan (HP) - 174101",
@@ -15,18 +15,21 @@ export const studentData = [
         id:2,
         name: "Shyam",
         rollno: "20bcs070",
+        email:'20bcs070@nith.ac.in',
         skills: ["HTML", "CSS", "Javascript"]
     },
     {
         id:3,
         name: "Lekhit",
         rollno: "20bcs064",
+        email:'20bcs064@nith.ac.in',
         skills: ["HTML", "CSS", "Javascript"]
     },
     {
         id:4,
         name: "Ashutosh",
         rollno: "20bcs069",
+        email:'20bcs069@nith.ac.in',
         skills: ["HTML", "CSS", "Javascript"]
     },
     {

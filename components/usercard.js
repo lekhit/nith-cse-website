@@ -32,7 +32,7 @@ function UserCard({ user }) {
                             <a href="#" target="_blank" className="fab"><FaIcons.FaLinkedin />
                             </a>
                         </div>
-                        <div className='findMore'><Link href={`student/${user.id}`}>Find More <AiOutlineRight /></Link></div>
+                        <div className='findMore'><Link href={`student/${user.email}`}>Find More <AiOutlineRight /></Link></div>
                     </div>
                     <div className="cancel center" onClick={() => setDetailActive(false)} id='cross'> <FaIcons.FaTimes className="fas" />
                     </div>

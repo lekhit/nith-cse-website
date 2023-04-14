@@ -14,6 +14,7 @@ function student() {
         width: '65px',
         borderRadius: '50%',
     }
+    
     return (
         <>
             <Head>
