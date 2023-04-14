@@ -1,8 +1,10 @@
-import Loader from '../components/Loader';
-import '../styles/globals.css'
+import Loader from '@/components/Loader';
+import '@/styles/globals.css'
 import { useState, useEffect } from 'react';
+import { SessionProvider } from "next-auth/react"
 
-export default function App({ Component, pageProps }) {
+
+export default function App({session, Component, pageProps }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -13,7 +15,11 @@ export default function App({ Component, pageProps }) {
 
   return <>
     {loading ? <Loader /> :
-      <Component {...pageProps} />
+ (
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
+    )
     }
   </>
 }

@@ -10,6 +10,10 @@ import * as FaIcons from "react-icons/fa";
 import Jump from 'react-reveal/Jump';
 import { EditOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
+import { signIn, signOut, useSession } from "next-auth/react"
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+
 
 function idPage() {
     const [data, setData] = useState([{
@@ -37,7 +41,13 @@ function idPage() {
         width: '65px',
         borderRadius: '50%',
     }
-
+    const { data: session, status, update } = useSession()
+    const router=useRouter();
+    const EditFunction =()=>{
+        return <Button href="/form" type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> Edit</Button>
+                   
+           
+    }
     return (
         <>
             <Head>
@@ -80,7 +90,8 @@ function idPage() {
                                 </a>
                             </div>
                         </Jump>
-                        <Button type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> Edit</Button>
+                        <EditFunction/>
+                       
                     </div>
                 </div>
                 <div className={styles.allDetails}>
