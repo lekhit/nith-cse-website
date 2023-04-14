@@ -7,7 +7,7 @@ function Header() {
   const {data:session,status}=useSession()
   const Login_=()=>{
     if(status==='authenticated'){
-    return <h2 >{session.user.name} </h2>
+    return <h1 >{session.user.name} </h1>
     }
   }
 
