@@ -63,7 +63,7 @@ export const studentData = [
         skills: ["HTML", "CSS", "Javascript"]
     },
     {
-        id:9,
+        id:10,
         name: "Arjun Talwar",
         rollno: "20bcs085",
         skills: ["Cricketer", "Long Jump", "Body Building"]

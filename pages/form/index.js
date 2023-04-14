@@ -1,8 +1,8 @@
-import {withFormik, Form, Field} from 'formik';
+import { withFormik, Form, Field } from 'formik';
 import CustomCursor from 'custom-cursor-react';
 import { useCallback, useEffect } from 'react';
 import { useSession, signIn, signOut } from "next-auth/react"
-import {Link} from 'next/link'
+import { Link } from 'next/link'
 import 'custom-cursor-react/dist/index.css';
 import { Router, useRouter } from 'next/router';
 
@@ -20,7 +20,7 @@ const fetchData = async ({ url, options }) => {
 
 const InnerForm = (props) => {
   const { touched, errors, isSubmitting, getFieldProps } = props;
-const router=useRouter()
+  const router = useRouter()
   return (
     <>
       <CustomCursor
@@ -40,21 +40,21 @@ const router=useRouter()
         strokeWidth={0}
       />
 
-        <div className="flex text-white justify-around mainForm">
+      <div className="flex text-white justify-around mainForm">
 
-          <div className="background">
-            <div className="container">
-              <div className="screen">
-                <div className="screen-header">
-                  <div className="screen-header-left">
-                    <div className="screen-header-button close"></div>
-                    <div className="screen-header-button maximize"></div>
-                    <div className="screen-header-button minimize"></div>
-                  </div>
-
+        <div className="background">
+          <div className="container">
+            <div className="screen">
+              <div className="screen-header">
+                <div className="screen-header-left">
+                  <div className="screen-header-button close"></div>
+                  <div className="screen-header-button maximize"></div>
+                  <div className="screen-header-button minimize"></div>
                 </div>
-<Form>
-<div className="screen-body">
+
+              </div>
+              <Form>
+                <div className="screen-body">
                   <div className="screen-body-item left">
                     <div className="app-title">
                       <span>Registration</span>
@@ -189,25 +189,25 @@ const router=useRouter()
                         />
                       </div>
                       <div className="app-form-group buttons">
-<a href={`/student/${props.email_}`}>
-<button className="app-form-button" onClick={()=>{router.push(`/student/${props.email_}`)}} type="submit" >Submit</button></a>
+                        <a href={`/student/${props.email_}`}>
+                          <button className="app-form-button" onClick={() => { router.push(`/student/${props.email_}`) }} type="submit" >Submit</button></a>
                       </div>
-                      <a  href={``}>
-<button className="app-form-button" type="submit" >View Changes</button></a>
-   
-        
+                      <a href={``}>
+                        <button className="app-form-button" type="submit" >View Changes</button></a>
+
+
                     </div>
                   </div>
                 </div>
-</Form>
+              </Form>
 
-       
-              </div>
 
             </div>
-          </div>
 
+          </div>
         </div>
+
+      </div>
 
     </>
   );
@@ -224,15 +224,15 @@ const MyForm = withFormik({
   // Add a custom validation function (this can be async too!)
   validate: (values) => {
     const errors = {};
-    
+
     return errors;
   },
-  
+
   handleSubmit: async (values) => {
     console.log(values)
     const options = {
       method: 'POST',
-      body: JSON.stringify({ ...values,['key']:values.email_ }),
+      body: JSON.stringify({ ...values, ['key']: values.email_ }),
       headers: {
       },
     };
@@ -242,24 +242,24 @@ const MyForm = withFormik({
   },
 })(InnerForm);
 
-function AuthForm(){
- 
-  const { data: session,status } = useSession()
+function AuthForm() {
+
+  const { data: session, status } = useSession()
   if (typeof window !== "undefined") {
     // Client-side-only code
- 
-    if(status==='authenticated')
-  return (
-    <div>
-    <MyForm name={session.user.name} email_={session.user.email} />
- </div>
-  )
-  if (status==='unauthenticated'){
-   signIn('google',{callbackUrl:"http://localhost:3000/form"})
-  }
 
-  
-  
-}
+    if (status === 'authenticated')
+      return (
+        <div>
+          <MyForm name={session.user.name} email_={session.user.email} />
+        </div>
+      )
+    if (status === 'unauthenticated') {
+      signIn('google', { callbackUrl: "http://localhost:3000/form" })
+    }
+
+
+
+  }
 }
 export default AuthForm;
