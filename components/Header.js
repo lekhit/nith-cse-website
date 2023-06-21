@@ -17,7 +17,7 @@ function Header() {
       <div className={styles.header}>
         <div className={styles.overlay}></div>
         
-        <video src="/bg1.mp4" autoPlay loop muted className={styles.bgVideo}/>
+        <video src="https://thumbsnap.com/i/YbyDXmo8.mp4" autoPlay loop muted className={styles.bgVideo}/>
         <Navbar/>
         <div className={styles.content}>
             

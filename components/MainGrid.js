@@ -53,7 +53,7 @@ function MainGrid() {
                         </div>
                         <div className={styles.box5}>
                             <div className={styles.overlay} style={{ bottom: '1.8%' }}></div>
-                            <video src="/bg.mp4" autoPlay loop muted className={styles.boxVideo} />
+                            <video src="https://thumbsnap.com/i/M6nG9vAF.mp4" autoPlay loop muted className={styles.boxVideo} />
                             <Fade bottom>
                                 <h1>Video Heading</h1>
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam nam cumque nulla optio ducimus dignissimos</p>

@@ -23,7 +23,7 @@ const Navbar = () => {
   }
   return (
     <div className={styles.Navbar}>
-      <img src="/logo.png" alt="logo" className={styles.logo}/>
+      <img src="https://thumbsnap.com/i/CZmvhUcX.png" alt="logo" className={styles.logo}/>
       <div className={`${styles.navItems} ${isOpen && styles.open}`}>
         <Login_></Login_>
         <Link className={`${styles.navLinks} ${location.pathname === '/' ? styles.active : ''}`} href="/" id="home">Home</Link>

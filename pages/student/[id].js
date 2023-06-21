@@ -88,7 +88,7 @@ function IdPage() {
                 <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
 
                 <section className='facultyDetails'>
-                    <div className={styles.studentHeader} style={{ background: "url(/studentbg2.JPG) center center", backgroundSize: "100%", backgroundPositionY: '15%' }}>
+                    <div className={styles.studentHeader} style={{ background: "url(https://thumbsnap.com/i/2fk7RT6H.jpg) center center", backgroundSize: "100%", backgroundPositionY: '15%' }}>
                         <div className={styles.overlay} style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}></div>
                         <Navbar />
                         <div className={styles.studentImage}><Image width={400} src={data.img} /></div>
