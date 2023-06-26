@@ -12,7 +12,6 @@ import { EditOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 
 function IdPage() {
@@ -30,7 +29,7 @@ function IdPage() {
         setLoading(false)
         return text;
     }
-    
+
     useEffect((() => {
         const get_data = async () => {
             const data2 = await fetchData()
