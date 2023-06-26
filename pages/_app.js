@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react"
 
 
 export default function App({session, Component, pageProps }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setInterval(() => {
