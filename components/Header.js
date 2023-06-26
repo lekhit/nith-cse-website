@@ -24,7 +24,7 @@ function Header() {
       <div className={styles.header}>
         <div className={styles.overlay}></div>
 
-        <video src="/bg1.mp4" autoPlay loop muted className={styles.bgVideo} />
+        <video src="http://drive.google.com/uc?export=view&id=1uFXj1cLlsE_v9wWkexK-d5z_Q8AdP5to" autoPlay loop muted className={styles.bgVideo} />
         <Navbar />
         <div className={styles.content}>
 

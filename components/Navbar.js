@@ -11,12 +11,12 @@ const Navbar = () => {
   const {data:session,status}=useSession();
   const Login_=()=>{
     if(status==='unauthenticated'){
-     return  <Link onClick={()=>signIn('google')} href='#' id="student">Sign In</Link>
+     return  <Link onClick={()=>signIn('google')} href="/" id="student">Sign In</Link>
     }
     if(session){
       return  (
 
-      <Link onClick={()=>signOut()} href='#' id="student">Sign Out</Link>
+      <Link onClick={()=>signOut()} href="/" id="student">Sign Out</Link>
 )
     
     }
