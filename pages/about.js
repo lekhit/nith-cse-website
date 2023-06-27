@@ -41,7 +41,7 @@ function About() {
 
             <section className='about'>
                 
-                <div className={styles.studentHeader} style={{ background: "url(https://thumbsnap.com/i/sneFM77g.jpg) center center", backgroundSize: "100%" }}>
+                <div className={styles.studentHeader} style={{ background: "url(http://drive.google.com/uc?export=view&id=1fFepcxojMsftKyMou-4v49tmHTufQl5s) center center", backgroundSize: "100%" }}>
                     <div className={styles.overlay}></div>
                     <Navbar />
                     <div className={styles.headerText} style={{ height: '100%' }}>

@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.6",
     "@next/font": "13.1.6",
     "antd": "^5.4.0",
     "custom-cursor-react": "^1.0.5",

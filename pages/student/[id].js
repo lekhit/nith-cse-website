@@ -12,7 +12,6 @@ import { EditOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 
 function IdPage() {
@@ -30,6 +29,7 @@ function IdPage() {
         setLoading(false)
         return text;
     }
+
     useEffect((() => {
         const get_data = async () => {
             const data2 = await fetchData()
@@ -56,7 +56,7 @@ function IdPage() {
         if (status === 'authenticated') {
             const { id } = router.query
             if (session.user.email.toLowerCase() === id.toLowerCase())
-                return <Button href="/form" type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> {s}</Button>
+                return <Button href="/form" target = '_blank' type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> {s}</Button>
         }
     }
 
@@ -88,7 +88,7 @@ function IdPage() {
                 <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
 
                 <section className='facultyDetails'>
-                    <div className={styles.studentHeader} style={{ background: "url(https://thumbsnap.com/i/2fk7RT6H.jpg) center center", backgroundSize: "100%", backgroundPositionY: '15%' }}>
+                    <div className={styles.studentHeader} style={{ background: "url(http://drive.google.com/uc?export=view&id=1yJWRJd8_o7W1rvhJ2wu1vPGAnhKGZt40) center center", backgroundSize: "100%", backgroundPositionY: '15%' }}>
                         <div className={styles.overlay} style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}></div>
                         <Navbar />
                         <div className={styles.studentImage}><Image width={400} src={data.img} /></div>
@@ -138,7 +138,7 @@ function IdPage() {
                             <div className={styles.data}>
                                 <div><p>Email:</p><span>{data.email}</span></div>
                                 <div><p>Phone:</p><span>{data.phone}</span></div>
-                                <div><p>Website:</p><a href={data.website} style={{ color: "#9e4646" }}>Personal Website</a></div>
+                                <div><p>Website:</p><a href={data.website} target = "_blank" style={{ color: "#9e4646" }}>Personal Website</a></div>
                             </div>
                         </div>
 

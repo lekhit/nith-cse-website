@@ -40,7 +40,7 @@ function faculty() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage} style={{ background: "url(/widecardfaculty.jpg) center center", backgroundSize: "100%" }}>
+                <div className={styles.wideImage} style={{ background: "url(http://drive.google.com/uc?export=view&id=1zneno4RiqMsklNNULWvextpgOKJEfqot) center center", backgroundSize: "100%" }}>
                     <h1>Faculty</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
                 </div>
