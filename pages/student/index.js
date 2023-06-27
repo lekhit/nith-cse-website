@@ -53,7 +53,7 @@ useEffect(( ()=>{
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage} style={{ background: "url(/studentbg1.jpg) center center", backgroundSize: "100%" , height:'100vh'}}>
+                <div className={styles.wideImage} style={{ background: "url(http://drive.google.com/uc?export=view&id=1PCwAWu5E-hnIS67i9QmSOhy5zpj5uDfn) center center", backgroundSize: "100%" , height:'100vh'}}>
                     <div className={styles.overlay}></div>
                     <h1>Students</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
