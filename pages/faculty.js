@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar'
 import styles from '../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
 import FacultyCard from '../components/facultycard'
-import { facultyData } from "../assets/facultyData"
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import { useState,useEffect } from 'react';
@@ -16,7 +15,7 @@ function faculty() {
     }
     const [facultyData,setFD]=useState([])
     useEffect(( ()=>{
-        fetch('/api/faculty').then((data)=>(data.json())).then((d)=>(setstudentData(d.items)));
+        fetch('/api/faculty').then((data)=>(data.json())).then((d)=>(setFD(d.items)));
       //console.log(data)
       //setstudentData(data);
     }),[])
