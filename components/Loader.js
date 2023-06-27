@@ -11,7 +11,7 @@ function Loader() {
 
     return (
         <div style={{ background: 'white' }}>
-            <div className='preloader' style={preloaderStyle}>
+            <div className='preloader' style={preloaderStyle}> 
             </div>
         </div>
 
