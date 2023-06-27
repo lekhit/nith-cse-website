@@ -3,10 +3,12 @@ import Navbar from '../../components/Navbar'
 import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
 import UserCard from '@/components/usercard'
-import { studentData } from "../../assets/studentData"
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import StudentGrid from '@/components/StudentGrid';
+import { useEffect, useState } from 'react';
+
+
 
 function student() {
     const scrollStyle = {
@@ -14,7 +16,16 @@ function student() {
         width: '65px',
         borderRadius: '50%',
     }
-    
+   const [studentData,setstudentData]=useState([]); 
+
+
+useEffect(( ()=>{
+    fetch('/api/get_many').then((data)=>(data.json())).then((d)=>(setstudentData(d.items)));
+  //console.log(data)
+  //setstudentData(data);
+}),[])
+
+
     return (
         <>
             <Head>

@@ -5,6 +5,9 @@ micros:
     src: ./
     engine: next
     primary: true
+    commands:
+      - "npm install --force"
+    dev: "npm run dev"
     run: "npm i --force && npm run dev"
     public_routes:
      - "*"

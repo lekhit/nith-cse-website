@@ -1,4 +1,5 @@
-export const studentData = [
+var {Deta}=require('deta')
+const studentData = [
     {
         id:1,
         name: "Akshay",
@@ -69,3 +70,7 @@ export const studentData = [
         skills: ["Cricketer", "Long Jump", "Body Building"]
     }
 ]
+// const deta=Deta('c0acnnytluh_9eqZMHHkWEk2f92Mquy8CA9FdWverDq7')
+// const db=deta.Base('users')
+// const rs=db.putMany(studentData);
+// console.log(rs)

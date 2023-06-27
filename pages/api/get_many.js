@@ -9,8 +9,7 @@ export default async function handler(
   res
 ) {
 
-  const { id } = req.query
-let new_user;
+let new_users;
 
 
   try{
@@ -19,11 +18,11 @@ let new_user;
   //   email:email
   //  },
   // })
-new_user=await deta.Base('users').get(id)
+new_users=await deta.Base('users').fetch({})
 
 }catch(err){console.log(err)} 
   // If you don't have the NEXTAUTH_SECRET environment variable set,
   // you will have to pass your secret as `secret` to `getToken`
 
-res.send(JSON.stringify(new_user))
+res.send(JSON.stringify(new_users))
 }
