@@ -1,6 +1,6 @@
 
 
-import deta from '../../middleware/deta'
+import deta from '../../../middleware/deta'
 
 
 
