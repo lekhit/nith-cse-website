@@ -68,7 +68,7 @@ useEffect(( ()=>{
                     </div>
                     <div className={styles.cards}>
                         {studentData.map(user => {
-                            return <UserCard key={user.id} user={user} />
+                            return <UserCard key={user.key} user={user} />
                         })}
                     </div>
                 </section>
