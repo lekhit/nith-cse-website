@@ -1,4 +1,4 @@
-export const facultyData = [
+ const facultyData = [
     {
         id:1,
         name: "Dr. T P Sharma",
@@ -112,3 +112,8 @@ export const facultyData = [
         findMore: "https://portfolios.nith.ac.in/index.php?/nith/dr-sangeeta-sharma"         
     }
 ] 
+// var {Deta}=require('deta')
+// const deta=Deta('c0acnnytluh_9eqZMHHkWEk2f92Mquy8CA9FdWverDq7')
+// const db=deta.Base('faculty')
+// const rs=db.putMany(facultyData);
+// console.log(rs)

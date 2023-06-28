@@ -7,7 +7,7 @@ function Footer() {
         <>
             <footer className={styles.footer}>
                 <div className={styles.logo}>
-                    <img src="/logo.png" alt="logo" style={{ height: '10em' }} />
+                    <img src="https://thumbsnap.com/i/CZmvhUcX.png" alt="logo" style={{ height: '10em' }} />
                     <h1 className={styles.heading}>Department of Computer Science and Engineering</h1>
                     <p>National Institute Of Technology Hamirpur</p>
                 </div>

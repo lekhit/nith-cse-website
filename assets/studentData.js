@@ -1,4 +1,5 @@
-export const studentData = [
+var {Deta}=require('deta')
+const studentData = [
     {
         id:1,
         name: "Akshay",
@@ -59,5 +60,15 @@ export const studentData = [
         education: ["Ph.D, Marketing Strategy & International Business, The University of Texas at Austin , 1992 -1996", "PGDM, (MBA with concentration in Marketing & Finance), Indian Institute of Management, Ahmedabad, India, 1987-1989", "Bachelor of Technology , Chemical Engg, Indian Institute of Technology, Kanpur, India, 1982-1986"],
         about: "Ph.D, Marketing Strategy & International Business, The University of Texas at Austin , 1992 -1996 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ipsa earum aspernatur numquam ex alias hic magni exercitationem, unde sit enim facere distinctio eius aperiam molestiae autem eos a ab qui voluptatem!"
     },
-
+    {
+        id:10,
+        name: "Arjun Talwar",
+        rollno: "20bcs085",
+        skills: ["Cricketer", "Long Jump", "Body Building"]
+    }
 ]
+// const deta=Deta('c0acnnytluh_9eqZMHHkWEk2f92Mquy8CA9FdWverDq7')
+// const db=deta.Base('users')
+// const rs=db.putMany(studentData);
+// console.log(rs)
+

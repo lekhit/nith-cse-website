@@ -1,6 +1,6 @@
 
 
-import deta from '../../middleware/deta'
+import deta from '../../../middleware/deta'
 
 
 
@@ -18,7 +18,7 @@ let new_users;
   //   email:email
   //  },
   // })
-new_users=await deta.Base('users').fetch({})
+new_users=await deta.Base('faculty').fetch({})
 
 }catch(err){console.log(err)} 
   // If you don't have the NEXTAUTH_SECRET environment variable set,
