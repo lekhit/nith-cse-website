@@ -6,7 +6,7 @@ import FacultyCard from '../components/facultycard'
 import { facultyData } from "../assets/facultyData"
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function faculty() {
     const scrollStyle = {
@@ -14,13 +14,13 @@ function faculty() {
         width: '65px',
         borderRadius: '50%',
     }
-    const [facultyData,setFD]=useState([])
-    useEffect(( ()=>{
-        fetch('/api/faculty').then((data)=>(data.json())).then((d)=>(setstudentData(d.items)));
-      //console.log(data)
-      //setstudentData(data);
-    }),[])
-    
+    const [facultyData, setFacultyData] = useState([])
+    useEffect((() => {
+        fetch('/api/faculty').then((data) => (data.json())).then((d) => (setFacultyData(d.items)));
+        //console.log(data)
+        //setstudentData(data);
+    }), [])
+
     return (
         <>
             <Head>
