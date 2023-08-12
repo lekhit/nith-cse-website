@@ -22,6 +22,7 @@ const Navbar = () => {
     }
   }
   return (
+    
     <div className={styles.Navbar}>
       <img src="https://thumbsnap.com/i/CZmvhUcX.png" alt="logo" className={styles.logo}/>
       <div className={`${styles.navItems} ${isOpen && styles.open}`}>
@@ -31,8 +32,8 @@ const Navbar = () => {
         <Link className={`${styles.navLinks} ${location.pathname === '/faculty' ? styles.active : ''}`} href="/faculty" id="faculty">Faculty</Link>
         <Link className={`${styles.navLinks} ${location.pathname === '/student' ? styles.active : ''}`} href="/student" id="student">Students</Link>
         <Link className={styles.navLinks} href="https://nith.ac.in/computer-science-engineering" id="moreDetails" target="_blank">More Details</Link>
-     
       </div>
+
       <div className={`${styles.navToggle} ${isOpen && styles.open}`}
         onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.bar}></div>

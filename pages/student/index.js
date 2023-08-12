@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image';
 import Navbar from '../../components/Navbar'
 import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
@@ -16,14 +17,14 @@ function student() {
         width: '65px',
         borderRadius: '50%',
     }
-   const [studentData,setstudentData]=useState([]); 
+    const [studentData, setstudentData] = useState([]);
 
 
-useEffect(( ()=>{
-    fetch('/api/get_many').then((data)=>(data.json())).then((d)=>(setstudentData(d.items)));
-  //console.log(data)
-  //setstudentData(data);
-}),[])
+    useEffect((() => {
+        fetch('/api/get_many').then((data) => (data.json())).then((d) => (setstudentData(d.items)));
+        //console.log(data)
+        //setstudentData(data);
+    }), [])
 
 
     return (
@@ -53,15 +54,23 @@ useEffect(( ()=>{
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage} style={{ background: "url(http://drive.google.com/uc?export=view&id=1PCwAWu5E-hnIS67i9QmSOhy5zpj5uDfn) center center", backgroundSize: "100%" , height:'100vh'}}>
+                <div className={styles.wideImage}>
+                    <Image
+                        src="http://drive.google.com/uc?export=view&id=1PCwAWu5E-hnIS67i9QmSOhy5zpj5uDfn "
+                        className={styles.studentbg}
+                        alt="student pic"
+                        sizes="100vw"
+                        height="0"
+                        width="0"
+                    />
                     <div className={styles.overlay}></div>
                     <h1>Students</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
                 </div>
-               
-                <StudentGrid/>
 
-                <section className={styles.facultySection} style={{top:'203vh'}}>
+                <StudentGrid />
+
+                <section className={styles.facultySection} style={{ top: '203vh' }}>
                     <div className={styles.heading}>
                         <h1>Our Students</h1>
                         <div></div>

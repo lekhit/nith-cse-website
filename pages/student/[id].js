@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from '../../components/Navbar'
-import { Image } from 'antd';
+import Image from 'next/image'; 
+import { Image as AntdImage } from 'antd';
 import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
 import CustomCursor from 'custom-cursor-react';
@@ -56,7 +57,7 @@ function IdPage() {
         if (status === 'authenticated') {
             const { id } = router.query
             if (session.user.email.toLowerCase() === id.toLowerCase())
-                return <Button href="/form" target = '_blank' type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> {s}</Button>
+                return <Button href="/form" target='_blank' type="default" shape="round" icon={<EditOutlined />} size='large' style={{ position: 'absolute', right: '6%', bottom: '2%' }}> {s}</Button>
         }
     }
 
@@ -86,12 +87,23 @@ function IdPage() {
                     strokeWidth={0}
                 />
                 <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
-
                 <section className='facultyDetails'>
-                    <div className={styles.studentHeader} style={{ background: "url(http://drive.google.com/uc?export=view&id=1yJWRJd8_o7W1rvhJ2wu1vPGAnhKGZt40) center center", backgroundSize: "100%", backgroundPositionY: '15%' }}>
+                    <div className={styles.studentHeader}>
+                        <div> <Image
+                            src="http://drive.google.com/uc?export=view&id=1yJWRJd8_o7W1rvhJ2wu1vPGAnhKGZt40"
+                            className="fullPagePics"
+                            alt="student pic"
+                            sizes="100vw"
+                            height="0"
+                            width="0"
+                        /></div>
+
                         <div className={styles.overlay} style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}></div>
                         <Navbar />
-                        <div className={styles.studentImage}><Image width={400} src={data.img} /></div>
+                        <div className={styles.studentImage}>
+                            <AntdImage width={350} height={350} src="/avatar.webp" />
+                        </div>
+
                         <div className={styles.headerText}>
                             <h1>{data.name}</h1>
                             <p>{data.rollno}</p>
@@ -138,7 +150,7 @@ function IdPage() {
                             <div className={styles.data}>
                                 <div><p>Email:</p><span>{data.email}</span></div>
                                 <div><p>Phone:</p><span>{data.phone}</span></div>
-                                <div><p>Website:</p><a href={data.website} target = "_blank" style={{ color: "#9e4646" }}>Personal Website</a></div>
+                                <div><p>Website:</p><a href={data.website} target="_blank" style={{ color: "#9e4646" }}>Personal Website</a></div>
                             </div>
                         </div>
 

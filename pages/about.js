@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image';
 import Navbar from '../components/Navbar'
 import styles from '../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
@@ -38,10 +39,17 @@ function About() {
                 strokeWidth={0}
             />
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
-
+            
             <section className='about'>
-                
-                <div className={styles.studentHeader} style={{ background: "url(http://drive.google.com/uc?export=view&id=1fFepcxojMsftKyMou-4v49tmHTufQl5s) center center", backgroundSize: "100%" }}>
+                <div className={styles.studentHeader}>
+                    <Image
+                        src="http://drive.google.com/uc?export=view&id=1fFepcxojMsftKyMou-4v49tmHTufQl5s"
+                        className="fullPagePics"
+                        alt="about pic"
+                        sizes="100vw"
+                        height="0"
+                        width="0"
+                    />
                     <div className={styles.overlay}></div>
                     <Navbar />
                     <div className={styles.headerText} style={{ height: '100%' }}>

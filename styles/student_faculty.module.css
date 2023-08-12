@@ -14,6 +14,14 @@
     align-items: center;
 }
 
+.studentbg{
+    height: 138vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+
 .wideImage>h1 {
     font-size: 5em;
     z-index: 1;
@@ -109,7 +117,6 @@
 .studentHeader {
     height: 100vh;
     width: 100vw;
-    background-size: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -215,6 +222,7 @@
 
 .icons{
     width: 6%;
+    display: flex;
 }
 
 .icons>a {

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image';
 import Navbar from '../components/Navbar'
 import styles from '../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
@@ -13,13 +14,13 @@ function faculty() {
         width: '65px',
         borderRadius: '50%',
     }
-    const [facultyData,setFD]=useState([])
-    useEffect(( ()=>{
-        fetch('/api/faculty').then((data)=>(data.json())).then((d)=>(setFD(d.items)));
-      //console.log(data)
-      //setstudentData(data);
-    }),[])
-    
+    const [facultyData, setFD] = useState([])
+    useEffect((() => {
+        fetch('/api/faculty').then((data) => (data.json())).then((d) => (setFD(d.items)));
+        //console.log(data)
+        //setstudentData(data);
+    }), [])
+
     return (
         <>
             <Head>
@@ -47,7 +48,15 @@ function faculty() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage} style={{ background: "url(http://drive.google.com/uc?export=view&id=1zneno4RiqMsklNNULWvextpgOKJEfqot) center center", backgroundSize: "100%" }}>
+                <div className={styles.wideImage}>
+                    <Image
+                        src="http://drive.google.com/uc?export=view&id=1zneno4RiqMsklNNULWvextpgOKJEfqot"
+                        className="halfPagePics"
+                        alt="faculty pic"
+                        sizes="100vw"
+                        height="0"
+                        width="0"
+                    />
                     <h1>Faculty</h1>
                     <p>The curiosity and tenacity that drives our faculty’s research and creativity make their classrooms exciting places to be.</p>
                 </div>
