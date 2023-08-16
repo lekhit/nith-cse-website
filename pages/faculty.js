@@ -7,8 +7,23 @@ import FacultyCard from '../components/facultycard'
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react'
+import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
 
 function faculty() {
+    const { data: session, status } = useSession()
+    const Login_ = () => {
+        if (status === 'authenticated') {
+            return <Chip
+                avatar={<Avatar alt="Natacha" src={session.user.image} />}
+                label={session.user.name}
+                variant="outlined"
+                id='avatar'
+            />
+        }
+    }
+
     const scrollStyle = {
         height: '65px',
         width: '65px',
@@ -49,10 +64,11 @@ function faculty() {
             <div className={styles.faculty}>
                 <Navbar />
                 <div className={styles.wideImage}>
+                    <Login_></Login_>
                     <Image
-                        src="http://drive.google.com/uc?export=view&id=1zneno4RiqMsklNNULWvextpgOKJEfqot"
+                        src="https://drive.google.com/uc?export=view&id=1zneno4RiqMsklNNULWvextpgOKJEfqot"
                         className="halfPagePics"
-                        alt="faculty pic"
+                        alt=""
                         sizes="100vw"
                         height="0"
                         width="0"

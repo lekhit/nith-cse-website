@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Navbar from '../../components/Navbar'
-import Image from 'next/image'; 
+import Image from 'next/image';
 import { Image as AntdImage } from 'antd';
 import styles from '../../styles/student_faculty.module.css'
 import ScrollToTop from "react-scroll-to-top";
@@ -13,7 +13,8 @@ import { EditOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from 'next/router';
-
+import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
 
 function IdPage() {
     const [data, setData] = useState(null);
@@ -61,6 +62,17 @@ function IdPage() {
         }
     }
 
+    const Login_ = () => {
+        if (status === 'authenticated') {
+            return <Chip
+                avatar={<Avatar alt="Natacha" src={session.user.image} />}
+                label={session.user.name}
+                variant="outlined"
+                id='avatar'
+            />
+        }
+    }
+
     const Check_loading = () => {
         if (!loading && data) {
             return <>
@@ -88,11 +100,12 @@ function IdPage() {
                 />
                 <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
                 <section className='facultyDetails'>
+                    <Login_></Login_>
                     <div className={styles.studentHeader}>
                         <div> <Image
-                            src="http://drive.google.com/uc?export=view&id=1yJWRJd8_o7W1rvhJ2wu1vPGAnhKGZt40"
+                            src="https://drive.google.com/uc?export=view&id=1yJWRJd8_o7W1rvhJ2wu1vPGAnhKGZt40"
                             className="fullPagePics"
-                            alt="student pic"
+                            alt=""
                             sizes="100vw"
                             height="0"
                             width="0"
@@ -181,9 +194,9 @@ function IdPage() {
                                 <div></div>
                             </div>
                             <div className={`${styles.data} ${styles.skills}`}>
-                                <div><p>{data.skill1}</p></div>
-                                <div><p>{data.skill2}</p></div>
-                                <div><p>{data.skill3}</p></div>
+                                <div><p>C/C++</p></div>
+                                <div><p>OOPs</p></div>
+                                <div><p>DSA</p></div>
                             </div>
                         </div>
                     </div>
@@ -192,7 +205,7 @@ function IdPage() {
             </>
         }
         else {
-            return <div>loading</div>
+            return <></>
         }
 
     }

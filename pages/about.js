@@ -6,12 +6,27 @@ import ScrollToTop from "react-scroll-to-top";
 import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react'
+import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
 
 function About() {
     const scrollStyle = {
         height: '65px',
         width: '65px',
         borderRadius: '50%',
+    }
+
+    const { data: session, status } = useSession()
+    const Login_ = () => {
+        if (status === 'authenticated') {
+            return <Chip
+                avatar={<Avatar alt="Natacha" src={session.user.image} />}
+                label={session.user.name}
+                variant="outlined"
+                id='avatar'
+            />
+        }
     }
 
     return (
@@ -39,13 +54,14 @@ function About() {
                 strokeWidth={0}
             />
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
-            
+
             <section className='about'>
+                <Login_></Login_>
                 <div className={styles.studentHeader}>
                     <Image
-                        src="http://drive.google.com/uc?export=view&id=1fFepcxojMsftKyMou-4v49tmHTufQl5s"
+                        src="https://drive.google.com/uc?export=view&id=1fFepcxojMsftKyMou-4v49tmHTufQl5s"
                         className="fullPagePics"
-                        alt="about pic"
+                        alt=""
                         sizes="100vw"
                         height="0"
                         width="0"

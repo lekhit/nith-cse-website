@@ -8,23 +8,44 @@ import CustomCursor from 'custom-cursor-react';
 import 'custom-cursor-react/dist/index.css';
 import StudentGrid from '@/components/StudentGrid';
 import { useEffect, useState } from 'react';
-
-
+// import StudentData from '@/assets/studentData';
+import SearchBar from '@/components/SearchBar';
+import { useSession } from 'next-auth/react'
+import Avatar from '@mui/material/Avatar';
+import Chip from '@mui/material/Chip';
 
 function student() {
+    const { data: session, status } = useSession()
+    const Login_ = () => {
+        if (status === 'authenticated') {
+            return <Chip
+                avatar={<Avatar alt="Natacha" src={session.user.image} />}
+                label={session.user.name}
+                variant="outlined"
+                id='avatar'
+            />
+        }
+    }
+
     const scrollStyle = {
         height: '65px',
         width: '65px',
         borderRadius: '50%',
     }
-    const [studentData, setstudentData] = useState([]);
+    const [allStudentData, setAllStudentData] = useState([]);
+    const [studentDataState, setstudentDatastate] = useState([]);
 
-
-    useEffect((() => {
-        fetch('/api/get_many').then((data) => (data.json())).then((d) => (setstudentData(d.items)));
-        //console.log(data)
-        //setstudentData(data);
-    }), [])
+    useEffect(() => {
+        fetch('/api/get_many')
+            .then((response) => response.json())
+            .then((data) => {
+                setstudentDatastate(data.items);
+                setAllStudentData(data.items);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
 
     return (
@@ -54,11 +75,12 @@ function student() {
             <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
             <div className={styles.faculty}>
                 <Navbar />
-                <div className={styles.wideImage}>
+                <div className={styles.wideImage} style={{ height: '100vh' }}>
+                    <Login_></Login_>
                     <Image
-                        src="http://drive.google.com/uc?export=view&id=1PCwAWu5E-hnIS67i9QmSOhy5zpj5uDfn "
-                        className={styles.studentbg}
-                        alt="student pic"
+                        src="https://drive.google.com/uc?export=view&id=1PCwAWu5E-hnIS67i9QmSOhy5zpj5uDfn"
+                        className="fullPagePics"
+                        alt=""
                         sizes="100vw"
                         height="0"
                         width="0"
@@ -73,10 +95,12 @@ function student() {
                 <section className={styles.facultySection} style={{ top: '203vh' }}>
                     <div className={styles.heading}>
                         <h1>Our Students</h1>
-                        <div></div>
                     </div>
+
+                    <SearchBar allStudentData={allStudentData} studentData={studentDataState} setstudentData={setstudentDatastate} />
+
                     <div className={styles.cards}>
-                        {studentData.map(user => {
+                        {studentDataState.map(user => {
                             return <UserCard key={user.key} user={user} />
                         })}
                     </div>

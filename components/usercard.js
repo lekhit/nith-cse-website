@@ -13,7 +13,7 @@ function UserCard({ user }) {
                 <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
                 <div className='card-text'>
                     <p className="user_name">{user.name}</p>
-                    <p className="skill">{user.role}</p>
+                    <p className="skill">{user.rollno}</p>
                 </div>
                 <div className="arr_container center" onClick={() => setDetailActive(true)} >
                     <FaIcons.FaArrowRight className="fas" />
@@ -22,9 +22,9 @@ function UserCard({ user }) {
                     <div className="left_container_data">
                         <p>Skills</p>
                         <div className="skills">
-                            {user.skills.map((skill) => {
-                                return <div key={skill}>{skill}</div>
-                            })}
+                            <div>C/C++</div>
+                            <div>OOPs</div>
+                            <div>DSA</div>
                         </div>
                         <div className="icons">
                             <a href="#" target="_blank" className="fab"><FaIcons.FaGithub />

@@ -12,14 +12,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-.studentbg{
-    height: 138vh;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    object-fit: cover;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
 }
 
 .wideImage>h1 {
@@ -120,6 +113,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    background: linear-gradient(to right, #70e1f5, #ffd194);
 }
 
 .overlay {
